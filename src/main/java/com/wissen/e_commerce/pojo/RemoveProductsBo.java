@@ -4,5 +4,19 @@ import java.util.List;
 
 public class RemoveProductsBo extends BaseInventoryBo{
 
-	private List<Long> productIds;
+	private List<ProductBo> products;
+
+	public List<ProductBo> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<ProductBo> products) {
+		this.products = products;
+	}
+
+	@Override
+	public String toString() {
+		return "AddProductsBo [products=" + products + "]";
+	}	
+
 }

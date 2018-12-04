@@ -13,6 +13,7 @@ import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.wissen.e_commerce.exception.E_CommerceException;
 import com.wissen.e_commerce.pojo.AddProductsBo;
 import com.wissen.e_commerce.pojo.InventoryBo;
 import com.wissen.e_commerce.pojo.RemoveProductsBo;
@@ -27,7 +28,7 @@ public class InventoryResource {
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response addInventory(InventoryBo inventoryBo)
+	public Response addInventory(InventoryBo inventoryBo) throws E_CommerceException
 	{
 		inventoryService.addInventory(inventoryBo);
 		return Response.ok().build();
@@ -46,7 +47,7 @@ public class InventoryResource {
 	@Path("/products")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response addProducts(AddProductsBo addProductsBo) {
+	public Response addProducts(AddProductsBo addProductsBo) throws E_CommerceException {
 		
 		inventoryService.addProducts(addProductsBo);
 		return Response.ok().build();
@@ -56,7 +57,7 @@ public class InventoryResource {
 	@Path("/products")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response removeProducts(RemoveProductsBo removeProductsBo) {
+	public Response removeProducts(RemoveProductsBo removeProductsBo) throws E_CommerceException {
 		
 		inventoryService.removeProducts(removeProductsBo);
 		return Response.ok().build();
@@ -64,11 +65,9 @@ public class InventoryResource {
 	
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response updateQuantity(@PathParam("id")Long id,@PathParam("quantity")Long quantity){
+	public Response updateQuantity(@PathParam("id")Long id,@PathParam("quantity")Long quantity) throws E_CommerceException{
 		
 		inventoryService.updateProductQuantity(id, quantity);
 		return Response.ok().build();
-		
-		
 	}
 }

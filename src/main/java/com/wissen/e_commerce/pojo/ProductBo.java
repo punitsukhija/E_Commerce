@@ -12,11 +12,22 @@ public class ProductBo {
 	private Double price;
 
 	private Long inventoryId;
+	
+	private Double discountedPrice;
+
+	public Double getDiscountedPrice() {
+		return discountedPrice;
+	}
+
+	public void setDiscountedPrice(Double discountedPrice) {
+		this.discountedPrice = discountedPrice;
+	}
 
 	@Override
 	public String toString() {
 		return "ProductBo [id=" + id + ", productName=" + productName + ", description=" + description + ", category="
-				+ category + ", price=" + price + ", inventoryId=" + inventoryId + ", quantity=" + quantity + "]";
+				+ category + ", price=" + price + ", inventoryId=" + inventoryId + ", discountedPrice="
+				+ discountedPrice + ", quantity=" + quantity + "]";
 	}
 
 	public Long getId() {

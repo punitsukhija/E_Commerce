@@ -27,5 +27,6 @@ public interface ProductRepository extends JpaRepository<Product, Long>{
 	
 	@Query(nativeQuery = true,value = "select p from Product p where p.inventoryId IN (select i.id from Inventory i where i.sellerId IN (select s.id from Seller s where s.sellenamer=:sellerName))")
 	public List<Product> getProductWithSeller(@Param("sellerName") String sellerName); 
+	
 
 }

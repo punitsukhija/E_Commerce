@@ -43,7 +43,7 @@ public class Discount {
 	private DiscountType discountType;
 	
 	@Column(name = "DISCOUNT_VALUE")
-	private String discountValue;
+	private Double discountValue;
 	
 	@Column(name = "ACTIVE")
 	private Boolean active;
@@ -104,11 +104,11 @@ public class Discount {
 		this.discountType = discountType;
 	}
 
-	public String getDiscountValue() {
+	public Double getDiscountValue() {
 		return discountValue;
 	}
 
-	public void setDiscountValue(String discountValue) {
+	public void setDiscountValue(Double discountValue) {
 		this.discountValue = discountValue;
 	}
 

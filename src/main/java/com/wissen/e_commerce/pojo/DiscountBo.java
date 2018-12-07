@@ -11,7 +11,7 @@ public class DiscountBo {
 	private Date validFromDate;
 	private Date expiryDate;
 	private DiscountType discountType;
-	private String discountValue;
+	private Double discountValue;
 	private Boolean active;
 	
 	public Boolean getActive() {
@@ -62,10 +62,10 @@ public class DiscountBo {
 	public void setDiscountType(DiscountType discountType) {
 		this.discountType = discountType;
 	}
-	public String getDiscountValue() {
+	public Double getDiscountValue() {
 		return discountValue;
 	}
-	public void setDiscountValue(String discountValue) {
+	public void setDiscountValue(Double discountValue) {
 		this.discountValue = discountValue;
 	}
 	
